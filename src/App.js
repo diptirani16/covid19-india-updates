@@ -4,6 +4,7 @@ import LastRefreshed from './components/LastRefreshed';
 import Search from './components/Search';
 import StatewiseList from './components/StatewiseList';
 import Summary from './components/Summary';
+import IndiaMap from './components/IndiaMap';
 
 function App() {
   const [states, setStates] = useState([]);
@@ -41,15 +42,16 @@ function App() {
 
   return (
     <div className="App">
-      <Search states={states} />
+      {/* <Search states={states} /> */}
       {/* <LastRefreshed lastUpdated={lastUpdated} /> */}
-      <Summary 
+      {/* <Summary 
         totalConfirmed={totalConfirmed} 
         totalRecovered={totalRecovered}
         totalDeceased={totalDeceased} 
         totalActive={totalActive}
-        />
-      <StatewiseList regional={regional} />
+        /> */}
+      {/* <StatewiseList regional={regional} /> */}
+      <IndiaMap />
     </div>
   );
 }

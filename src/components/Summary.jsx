@@ -1,18 +1,12 @@
 import React from 'react';
 import { Card, CardContent, Typography } from '@mui/material';
-import { addComma } from '../utils/addComma';
 
 export default function Summary(props) {
-    const changeBackground = (e, color) => {
-        e.target.style.background = color;
-    }
-
+   
     return (
         <div style={{display: 'flex'}}>
-            <Card elevation={0} sx={{ width: 150, height: 225, color: "#ff073a" }} 
-                onMouseOver={(e) => changeBackground(e.target.style.background = '#FFDFE6')}
-                onMouseLeave={(e) => changeBackground(e.target.style.background = 'white')}>
-                <CardContent>
+            <Card elevation={0} sx={{ width: 150, height: 225, color: "#ff073a" }}  >
+                 <CardContent>
                     <Typography sx={{ fontSize: '12px !important', fontWeight: 600 }} gutterBottom>
                         Confirmed
                     </Typography>
@@ -20,7 +14,7 @@ export default function Summary(props) {
                         DailyIncrease
                     </Typography>
                     <Typography variant="h5" component="div" sx={{ fontWeight: 600 }}>
-                        {props.totalConfirmed ? addComma(props.totalConfirmed) : ""}
+                        {props.totalConfirmed ? new Intl.NumberFormat('en-IN').format(props.totalConfirmed) : ""}
                     </Typography>
                 </CardContent>
             </Card>
@@ -33,14 +27,12 @@ export default function Summary(props) {
                         DailyIncrease
                     </Typography>
                     <Typography variant="h5" component="div" sx={{ fontWeight: 600 }}>
-                        {props.totalConfirmed ? addComma(props.totalConfirmed - props.totalRecovered - props.totalDeceased) : ""}
+                        {props.totalConfirmed ? new Intl.NumberFormat('en-IN').format(props.totalConfirmed - props.totalRecovered - props.totalDeceased) : ""}
                     </Typography>
                 </CardContent>
             </Card>
-            <Card elevation={0} sx={{ width: 150, height: 225, color: "#28a745" }}
-                onMouseOver={(e) => changeBackground(e.target.style.background = '#CDEBD2')}
-                onMouseLeave={(e) => changeBackground(e.target.style.background = 'white')}>
-                <CardContent>
+            <Card elevation={0} sx={{ width: 150, height: 225, color: "#28a745" }} >
+                 <CardContent>
                     <Typography sx={{ fontSize: '12px !important', fontWeight: 600 }} gutterBottom>
                         Recovered
                     </Typography>
@@ -48,14 +40,12 @@ export default function Summary(props) {
                         DailyIncrease
                     </Typography>
                     <Typography variant="h5" component="div" sx={{ fontWeight: 600 }}>
-                        {props.totalRecovered ? addComma(props.totalRecovered) : ""}
+                        {props.totalRecovered ? new Intl.NumberFormat('en-IN').format(props.totalRecovered) : ""}
                     </Typography>
                 </CardContent>
             </Card>
-            <Card elevation={0} sx={{ width: 150, height: 225, color: "#6c757d" }}
-                onMouseOver={(e) => changeBackground(e.target.style.background = '#E4E6E8')}
-                onMouseLeave={(e) => changeBackground(e.target.style.background = 'white')}>
-                <CardContent>
+            <Card elevation={0} sx={{ width: 150, height: 225, color: "#6c757d" }} >
+                 <CardContent>
                     <Typography sx={{ fontSize: '12px !important', fontWeight: 600 }} gutterBottom>
                         Deceased
                     </Typography>
@@ -63,7 +53,7 @@ export default function Summary(props) {
                         DailyIncrease
                     </Typography>
                     <Typography variant="h5" component="div" sx={{ fontWeight: 600 }}>
-                        {props.totalDeceased ? addComma(props.totalDeceased) : ""}
+                        {props.totalDeceased ? new Intl.NumberFormat('en-IN').format(props.totalDeceased) : ""}
                     </Typography>
                 </CardContent>
             </Card>
